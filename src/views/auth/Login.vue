@@ -53,7 +53,9 @@ export default defineComponent({
       }
     },
 
-    attemptLogin() {},
+    attemptLogin() {
+      this.$router.push({ name: "Home" });
+    },
   },
 });
 </script>

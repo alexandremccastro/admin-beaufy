@@ -18,6 +18,48 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: "/",
+    meta: { requiresAuth: true },
+    component: () => import("@/views/layouts/Admin.vue"),
+    children: [
+      {
+        path: "/home",
+        name: "Home",
+        component: import("@/views/pages/Home.vue"),
+      },
+      {
+        path: "/widgets",
+        name: "Widgets",
+        component: import("@/views/pages/Widgets.vue"),
+      },
+      {
+        path: "/charts",
+        name: "Charts",
+        component: import("@/views/pages/Charts.vue"),
+      },
+      {
+        path: "/ui",
+        children: [
+          {
+            path: "general",
+            name: "General",
+            component: import("@/views/ui/General.vue"),
+          },
+          {
+            path: "buttons",
+            name: "Buttons",
+            component: import("@/views/ui/Buttons.vue"),
+          },
+          {
+            path: "icons",
+            name: "Icons",
+            component: import("@/views/ui/Icons.vue"),
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

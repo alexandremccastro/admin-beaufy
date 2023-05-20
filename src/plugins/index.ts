@@ -13,8 +13,10 @@ import router from '../router'
 
 // Types
 import type { App } from 'vue'
+import { configureChart } from './chart'
 
 export function registerPlugins(app: App) {
   loadFonts()
+  configureChart()
   app.use(vuetify).use(router).use(pinia)
 }

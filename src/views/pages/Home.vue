@@ -1,9 +1,6 @@
 <template>
   <v-container fluid>
-    <div class="d-flex justify-space-between items-center w-100">
-      <h2>Home</h2>
-      <v-breadcrumbs :items="['Home']"></v-breadcrumbs>
-    </div>
+    <Breadcrumb />
 
     <v-row>
       <v-col cols="12" sm="6" md="3">
@@ -89,6 +86,7 @@
   </v-container>
 </template>
 <script lang="ts">
+import Breadcrumb from "@/components/Breadcrumb.vue";
 import { defineComponent } from "vue";
 
 const desserts = [
@@ -202,7 +200,7 @@ const FakeAPI = {
 
 export default defineComponent({
   name: "HomePage",
-
+  components: { Breadcrumb },
   data() {
     return {
       itemsPerPage: 10,

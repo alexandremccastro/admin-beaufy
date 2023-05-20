@@ -1,15 +1,14 @@
 <template>
   <v-container>
-    <div class="d-flex justify-space-between items-center w-100">
-      <h2>General</h2>
-      <v-breadcrumbs :items="['Home', 'General']"></v-breadcrumbs>
-    </div>
+    <Breadcrumb />
   </v-container>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import Breadcrumb from "@/components/Breadcrumb.vue";
 
 export default defineComponent({
   name: "GeneralPage",
+  components: { Breadcrumb }
 });
 </script>

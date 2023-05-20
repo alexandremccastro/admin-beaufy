@@ -16,28 +16,22 @@
         <v-list density="comfortable" width="200">
           <v-list-item @click="">
             <v-list-item-title>Account</v-list-item-title>
-            <v-list-item-subtitle
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio,
-              voluptates.</v-list-item-subtitle
-            >
+            <v-list-item-subtitle>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio,
+              voluptates.</v-list-item-subtitle>
           </v-list-item>
 
           <v-divider />
 
           <v-list-item @click="">
             <v-list-item-title>Account</v-list-item-title>
-            <v-list-item-subtitle
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio,
-              voluptates.</v-list-item-subtitle
-            >
+            <v-list-item-subtitle>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio,
+              voluptates.</v-list-item-subtitle>
           </v-list-item>
           <v-divider />
           <v-list-item @click="">
             <v-list-item-title>Account</v-list-item-title>
-            <v-list-item-subtitle
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio,
-              voluptates.</v-list-item-subtitle
-            >
+            <v-list-item-subtitle>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio,
+              voluptates.</v-list-item-subtitle>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -74,22 +68,12 @@
                 </v-list-item>
               </template>
 
-              <v-list-item
-                v-for="(child, idx) in item.children"
-                :key="idx"
-                :title="child.title"
-                :to="child.to"
-              >
+              <v-list-item v-for="(child, idx) in item.children" :key="idx" :title="child.title" :to="child.to">
               </v-list-item>
             </v-list-group>
           </template>
           <template v-else>
-            <v-list-item
-              :key="idx"
-              :prepend-icon="item.icon"
-              :title="item.title"
-              :to="item.to"
-            >
+            <v-list-item :key="idx" :prepend-icon="item.icon" :title="item.title" :to="item.to">
             </v-list-item>
           </template>
         </template>

@@ -1,16 +1,7 @@
 <template>
-  <v-text-field
-    :append-icon="appendIcon"
-    :append-inner-icon="appendInnerIcon"
-    :prepend-icon="prependIcon"
-    :prepend-inner-icon="prependInnerIcon"
-    :label="label"
-    v-model="model"
-    :type="type"
-    variant="solo"
-    density="comfortable"
-    :loading="loading"
-  ></v-text-field>
+  <v-text-field :append-icon="appendIcon" :append-inner-icon="appendInnerIcon" :prepend-icon="prependIcon"
+    :prepend-inner-icon="prependInnerIcon" :label="label" v-model="model" :type="type" variant="solo"
+    density="comfortable" :loading="loading"></v-text-field>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";

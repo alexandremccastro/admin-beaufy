@@ -1,7 +1,7 @@
 
 <template>
   <div class="d-flex justify-space-between items-center w-100">
-    <h6 class="text-h6">{{ routeName }}</h6>
+    <h5 class="text-h5">{{ routeName }}</h5>
     <v-breadcrumbs :items="Array.from(matched)"></v-breadcrumbs>
   </div>
 </template>

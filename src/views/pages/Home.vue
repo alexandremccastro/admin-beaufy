@@ -4,63 +4,19 @@
 
     <v-row>
       <v-col cols="12" sm="6" md="3">
-        <v-card color="info">
-          <v-card-text class="d-flex justify-space-between">
-            <section>
-              <v-card-title>150</v-card-title>
-              <v-card-subtitle class="text-xl">New Orders</v-card-subtitle>
-            </section>
-
-            <v-card-item>
-              <v-icon size="50">mdi-shopping-outline</v-icon>
-            </v-card-item>
-          </v-card-text>
-        </v-card>
+        <CustomBox label="New Orders" color="info" value="150" icon="mdi-shopping-outline" />
       </v-col>
 
       <v-col cols="12" sm="6" md="3">
-        <v-card color="success">
-          <v-card-text class="d-flex justify-space-between">
-            <section>
-              <v-card-title>53%</v-card-title>
-              <v-card-subtitle class="text-xl">Bounce Rate</v-card-subtitle>
-            </section>
-
-            <v-card-item>
-              <v-icon size="50">mdi-finance</v-icon>
-            </v-card-item>
-          </v-card-text>
-        </v-card>
+        <CustomBox label="Bounce Rate" color="success" value="53%" icon="mdi-finance" />
       </v-col>
 
       <v-col cols="12" sm="6" md="3">
-        <v-card color="warning">
-          <v-card-text class="d-flex justify-space-between">
-            <section>
-              <v-card-title>250</v-card-title>
-              <v-card-subtitle class="text-xl">User Registrations</v-card-subtitle>
-            </section>
-
-            <v-card-item>
-              <v-icon size="50">mdi-account-plus-outline</v-icon>
-            </v-card-item>
-          </v-card-text>
-        </v-card>
+        <CustomBox label="User Registrations" color="warning" value="250" icon="mdi-account-plus-outline" />
       </v-col>
 
       <v-col cols="12" sm="6" md="3">
-        <v-card color="red">
-          <v-card-text class="d-flex justify-space-between">
-            <section>
-              <v-card-title>27</v-card-title>
-              <v-card-subtitle class="text-xl">Unique Visitors</v-card-subtitle>
-            </section>
-
-            <v-card-item>
-              <v-icon size="50">mdi-chart-line-variant</v-icon>
-            </v-card-item>
-          </v-card-text>
-        </v-card>
+        <CustomBox label="Unique Visitors" color="red" value="27" icon="mdi-chart-line-variant" />
       </v-col>
     </v-row>
 
@@ -87,6 +43,7 @@
 </template>
 <script lang="ts">
 import Breadcrumb from "@/components/Breadcrumb.vue";
+import CustomBox from "@/components/widgets/CustomBox.vue";
 import { defineComponent } from "vue";
 
 const desserts = [
@@ -200,7 +157,7 @@ const FakeAPI = {
 
 export default defineComponent({
   name: "HomePage",
-  components: { Breadcrumb },
+  components: { Breadcrumb, CustomBox },
   data() {
     return {
       itemsPerPage: 10,

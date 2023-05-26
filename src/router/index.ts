@@ -57,6 +57,11 @@ const routes: RouteRecordRaw[] = [
             name: 'Icons',
             component: import('@/views/ui/Icons.vue'),
           },
+          {
+            path: 'snackbars',
+            name: 'Snackbars',
+            component: import('@/views/ui/Snackbars.vue'),
+          },
         ],
       },
     ],

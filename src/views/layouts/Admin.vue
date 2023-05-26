@@ -125,6 +125,10 @@ export default defineComponent({
               title: "Icons",
               to: { name: "Icons" },
             },
+            {
+              title: "Snackbars",
+              to: { name: "Snackbars" },
+            },
           ],
         },
       ],

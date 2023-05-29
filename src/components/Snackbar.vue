@@ -1,7 +1,7 @@
 <template>
-  <template v-for="({ message, color }, idx) in notifications" :key="idx">
-    <v-snackbar absolute origin="bottom left" :color="color" :attach="false" v-model="notifications[idx].show"
-      timeout="2000">{{ message }}</v-snackbar>
+  <template v-for="({ message, color, variant }, idx) in notifications" :key="idx">
+    <v-snackbar absolute origin="bottom left" :color="color" :attach="false" :variant="variant"
+      v-model="notifications[idx].show" timeout="2000">{{ message }}</v-snackbar>
   </template>
 </template>
 <script lang="ts">

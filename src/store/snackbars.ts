@@ -5,6 +5,14 @@ export interface Notification {
   color: string
   timeout: number
   show: boolean
+  variant:
+    | 'flat'
+    | 'text'
+    | 'elevated'
+    | 'tonal'
+    | 'outlined'
+    | 'plain'
+    | undefined
 }
 
 export interface State {

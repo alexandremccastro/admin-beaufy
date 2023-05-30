@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="h-90">
+  <v-layout class="h-85">
     <PolarArea :options="chartOptions" :data="data" />
   </v-layout>
 </template>

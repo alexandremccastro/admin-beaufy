@@ -1,6 +1,6 @@
 
 <template>
-  <v-layout class="h-90">
+  <v-layout class="h-85">
     <Bar :options="chartOptions" :data="data" />
   </v-layout>
 </template>

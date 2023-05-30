@@ -9,10 +9,41 @@
 //   $color-pack: false
 // );
 
+.v-application {
+  
+  .v-toolbar__content {
+    height: 60px!important;
+  }
+}
+
+.v-application.v-theme--light  {
+  .v-layout.root-container {
+    background: #f5f5f5!important;
+  }
+  
+  .app-bar-logo {
+    background: #1867c0e0!important;
+  }
+  
+}
+
+
+
+
+
+
 .vh-100 {
   min-height: 100vh;
 }
 
 .h-90 {
   height: 90%;
+}
+
+.h-85 {
+  height: 85%;
+}
+
+.v-list-group__items .v-list-item {
+  padding-inline-start: calc(1rem - 8px)!important;
 }

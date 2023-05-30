@@ -1,9 +1,43 @@
 <template>
   <v-layout>
-    <v-app-bar color="primary" density="comfortable" app>
-      <v-app-bar-nav-icon @click="toggleNavigationDrawer"></v-app-bar-nav-icon>
-      <v-app-bar-title>AdminBeaufy</v-app-bar-title>
+    <v-navigation-drawer class="border-0" theme="dark" v-model="drawer" elevation="2">
 
+      <v-list variant="text" class="ma-0  pa-0  d-flex justify-center align-center border-b" height="60"
+        density="compact">
+        <v-list-item max-height="40" class="d-flex align-center justify-center pa-5">
+          <v-list-item-media>
+            <v-img width="150" src="https://cdn.vuetifyjs.com/docs/images/logos/vuetify-logo-v3-slim-text-dark.svg" />
+          </v-list-item-media>
+        </v-list-item>
+      </v-list>
+
+      <v-list nav variant="text" density="compact">
+
+        <template v-for="(item, idx) in items">
+          <template v-if="item.children">
+            <v-list-group :key="idx">
+              <template v-slot:activator="{ props }">
+                <v-list-item :prepend-icon="item.icon" v-bind="props">
+                  <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item>
+              </template>
+
+              <v-list-item v-for="(child, idx) in item.children" :key="idx" :title="child.title"
+                :prepend-icon="child.icon" :to="child.to">
+              </v-list-item>
+            </v-list-group>
+          </template>
+          <template v-else>
+            <v-list-item :key="idx" :prepend-icon="item.icon" :title="item.title" :to="item.to">
+            </v-list-item>
+          </template>
+        </template>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar color="transparent" density="comfortable" absolute elevation="0">
+      <v-app-bar-nav-icon @click="toggleNavigationDrawer"></v-app-bar-nav-icon>
+      <v-app-bar-title>{{ $route.name }}</v-app-bar-title>
       <v-spacer />
 
       <v-menu>
@@ -57,30 +91,7 @@
       </v-menu>
     </v-app-bar>
 
-    <v-navigation-drawer theme="dark" v-model="drawer" app>
-      <v-list density="comfortable">
-        <template v-for="(item, idx) in items">
-          <template v-if="item.children">
-            <v-list-group :key="idx">
-              <template v-slot:activator="{ props }">
-                <v-list-item :prepend-icon="item.icon" v-bind="props">
-                  <v-list-item-title>{{ item.title }}</v-list-item-title>
-                </v-list-item>
-              </template>
-
-              <v-list-item v-for="(child, idx) in item.children" :key="idx" :title="child.title" :to="child.to">
-              </v-list-item>
-            </v-list-group>
-          </template>
-          <template v-else>
-            <v-list-item :key="idx" :prepend-icon="item.icon" :title="item.title" :to="item.to">
-            </v-list-item>
-          </template>
-        </template>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-main class="vh-100" app>
+    <v-main class="vh-100">
       <router-view />
     </v-main>
   </v-layout>
@@ -115,22 +126,47 @@ export default defineComponent({
           children: [
             {
               title: "General",
+              icon: "mdi-circle-outline",
               to: { name: "General" },
             },
             {
               title: "Buttons",
+              icon: "mdi-circle-outline",
               to: { name: "Buttons" },
             },
             {
               title: "Icons",
+              icon: "mdi-circle-outline",
               to: { name: "Icons" },
             },
             {
               title: "Snackbars",
+              icon: "mdi-circle-outline",
               to: { name: "Snackbars" },
             },
           ],
         },
+        {
+          icon: 'mdi-square-edit-outline',
+          title: 'Forms',
+          children: [
+            {
+              title: 'General Elements',
+              icon: "mdi-circle-outline",
+              to: { name: 'GeneralElements' }
+            },
+            {
+              title: 'Advanced Elements',
+              icon: "mdi-circle-outline",
+              to: { name: 'AdvancedElements' }
+            },
+            {
+              title: 'Form Validation',
+              icon: "mdi-circle-outline",
+              to: { name: 'FormValidation' }
+            }
+          ]
+        }
       ],
     };
   },

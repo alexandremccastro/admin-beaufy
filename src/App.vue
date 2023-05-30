@@ -1,9 +1,11 @@
 <template>
-  <v-layout class="bg-grey-lighten-4">
-    <router-view />
+  <v-app>
+    <v-layout class="root-container">
+      <router-view />
 
-    <snackbar />
-  </v-layout>
+      <snackbar />
+    </v-layout>
+  </v-app>
 </template>
 
 <script lang="ts">

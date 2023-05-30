@@ -4,15 +4,11 @@
       <v-card-title><span class="text-grey">Admin</span>Beaufy</v-card-title>
       <v-card-subtitle>Type your credentials to enter</v-card-subtitle>
       <v-card-text class="pb-0">
-        <text-field label="Email" type="text" v-model="auth.email" />
+        <text-field label="Email" type="text" :value="auth.email" v-model="auth.email" />
 
-        <text-field
-          label="Password"
-          :type="inputType"
-          :append-inner-icon="inputIcon"
-          v-model="auth.password"
-          @click:appendInner="changeInputType"
-        />
+        <text-field label="Password" :type="inputType" :append-inner-icon="inputIcon" :value="auth.password"
+          v-model="auth.password" :clickAppendInner="changeInputType">
+        </text-field>
 
         <v-btn block color="primary" @click="attemptLogin">Login</v-btn>
       </v-card-text>
@@ -37,8 +33,8 @@ export default defineComponent({
       inputType: "password",
       inputIcon: "mdi-eye",
       auth: {
-        email: "",
-        password: "",
+        email: null,
+        password: null,
       },
     };
   },

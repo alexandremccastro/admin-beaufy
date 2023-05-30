@@ -1,7 +1,9 @@
 <template>
-  <v-text-field :append-icon="appendIcon" :append-inner-icon="appendInnerIcon" :prepend-icon="prependIcon"
-    :prepend-inner-icon="prependInnerIcon" :label="label" v-model="model" :type="type" variant="solo"
-    density="comfortable" :loading="loading"></v-text-field>
+  <v-label class="text-body-2 font-weight-medium w-100">{{ label }}</v-label>
+  <v-text-field class="w-100" @click:append-inner="clickAppendInner" :append-icon="appendIcon"
+    :append-inner-icon="appendInnerIcon" @click:prepend-inner="clickPrependInner" :prepend-icon="prependIcon"
+    :prepend-inner-icon="prependInnerIcon" v-model="model" :type="type" variant="solo-filled" density="compact"
+    :loading="loading" />
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
@@ -17,6 +19,9 @@ export default defineComponent({
       type: String,
       default: "",
     },
+    clickAppendInner: {
+      default: undefined
+    },
     prependIcon: {
       type: String,
       default: "",
@@ -24,6 +29,9 @@ export default defineComponent({
     prependInnerIcon: {
       type: String,
       default: "",
+    },
+    clickPrependInner: {
+      default: undefined
     },
     label: {
       type: String,
@@ -41,6 +49,10 @@ export default defineComponent({
       type: String,
       default: "",
     },
+  },
+
+  created() {
+    console.log(this)
   },
 
   computed: {

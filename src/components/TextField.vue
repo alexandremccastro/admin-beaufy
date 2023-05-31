@@ -2,15 +2,24 @@
   <v-label class="text-body-2 font-weight-medium w-100">{{ label }}</v-label>
   <v-text-field class="w-100" @click:append-inner="clickAppendInner" :append-icon="appendIcon"
     :append-inner-icon="appendInnerIcon" @click:prepend-inner="clickPrependInner" :prepend-icon="prependIcon"
-    :prepend-inner-icon="prependInnerIcon" v-model="model" :type="type" variant="solo-filled" density="compact"
-    :loading="loading" />
+    :prepend-inner-icon="prependInnerIcon" :rules="rules" :hint="hint" v-model="model" :type="type" variant="solo"
+    :density="density" :loading="loading" />
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+type Density = null | 'default' | 'comfortable' | 'compact';
+
+export interface IDesity {
+  default: Density
+};
 
 export default defineComponent({
   name: "TextField",
   props: {
+    density: {
+      type: String,
+      default: 'compact'
+    },
     appendIcon: {
       type: String,
       default: "",
@@ -45,23 +54,26 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    value: {
+    modelValue: {
       type: String,
       default: "",
     },
-  },
-
-  created() {
-    console.log(this)
+    hint: {
+      type: String,
+      default: ""
+    },
+    rules: {
+      default: () => []
+    }
   },
 
   computed: {
     model: {
       get() {
-        return this.value;
+        return this.modelValue;
       },
-      set(value: String) {
-        this.$emit("update:modelValue", value);
+      set(modelValue: String) {
+        this.$emit("update:modelValue", modelValue);
       },
     },
   },

@@ -64,6 +64,27 @@ const routes: RouteRecordRaw[] = [
           },
         ],
       },
+      {
+        path: '/forms',
+        name: 'Forms',
+        children: [
+          {
+            path: 'general-elements',
+            name: 'GeneralElements',
+            component: import('@/views/forms/GeneralElements.vue'),
+          },
+          {
+            path: 'advance-elements',
+            name: 'AdvancedElements',
+            component: import('@/views/forms/AdvancedElements.vue'),
+          },
+          {
+            path: 'form-validation',
+            name: 'FormValidation',
+            component: import('@/views/forms/FormValidation.vue'),
+          },
+        ],
+      },
     ],
   },
 ]
